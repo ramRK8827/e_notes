@@ -1,0 +1,385 @@
+Java 8 note
+ Ramkrishna Yadav
+empId 30058476
+
+Spring Cloud Configuration Server
+Spring Boot – Spring Cloud Configuration
+Client
+31. Spring Boot – Admin Server
+35. Spring Boot – Tracing Micro Service Logs
+
+**********************************************
+Interview Question and Answer :- 
+
+tell me about your self 
+explain your project arch
+core java 
+
+what is marker interface can we create our own marker interface 
+can marker interface extend funcational marker interface 
+what do you think after java 8 we still need a abstact class 
+where we can use abstact class 
+why string is immutable 
+what is string buffer and string builder 
+
+string s ="Hello";
+StringBuffer s1 = new StringBuffer("Hello");
+StringBuffer s2 = new StringBuffer("Hello");
+
+s= s1//
+s1==s2 //
+s1.equals(s2)
+
+how we can create a thread and explain the life cycle of the thread 
+what is execute service  have you hands on experience on it 
+difference between future and compitableFuture 
+difference between wait and sleep method 
+
+Exception Handling 
+
+how we can create our on custom unchecked exception 
+is finally excute  always 
+
+Collection 
+
+difference between hasMap HasTable and connurentHasMap
+internal working of HasMap
+
+
+Stream API 
+
+java 8 feature 
+why java team introduce static and defult method 
+explain the preDifine  funcational interface biFuncational Interface 
+what is new in date and time api 
+
+
+Spring , spring boot , microservice , hibernate 
+
+what IOC , 
+what is bean scope and DI 
+explain the @spring boot application Annotation 
+what strotype annotation 
+how we can use our own server in spring boot application 
+
+
+in MicroService what are design pattern you have implemented 
+what is service edukera 
+
+program 
+
+
+solid principal  and design pattern
+
+write Qury to find the record for last 7 days 
+
+how to optimize the qury 
+ 
+
+
+ 
+AWS 
+What types of s3 bucket available and when to use what 
+what is AWS secrect manager 
+what is VIP url and what is timestamp url 
+
+
+
+Solid  Principal :- 
+
+S - single 
+o - Opent /closed
+
+
+
+******************************************
+Introduction?
+What kind of projects you have worked on?
+What was the architecture of your project ?
+The way you implemented the API , was that monolithic application or how it was ?
+If you want to developer an API from scratch , how you will start ?
+How you will use third party API into your project ?
+Any configuration file and you want to use variables inside that file and if it is outside the project or inside the project , how you will load that into your application?
+Any experience in writing Junit test cases ?
+Where you have used cloud services in your project?
+How to connect s3 to your Spring boot application?
+How an API is deployed to the cloud ?
+How to troubleshoot the issues , if those found in cloud deployed application while in testing?
+Where do you put configurations specific to databases in Spring boot?
+How you will maintain different configurations in your project?
+What are the features of Java8 features you are using in your day-to-day coding?
+Which all collection framework you have used in your project?
+If you want to maintain insertion order same as for dropdown on the UI, which collection framework you should use?
+As on your resume, it's Angular and React..Have you worked or Just learned that ?
+ 
+
+*******************************************************
+
+
+@Entity 
+Passenger 
+{
+ oneToOne()
+Flight flight
+}
+
+
+Flight{
+oneTomany
+Passenger passenger ;
+}
+
+2nd way 
+
+
+@Repository
+interface FlightRepository<Filght> extends JpaRepository<Filght, Long>{
+
+select flightName , count(passenger.id) as passengerCount from flight 
+left join Passenger on passenger.fligthId= filght.id where date between ('startDate' , 'endDate')
+
+}
+
+last 7 how many passanger travel in this flight 
+
+
+****************************************************************************
+
+
+
+why string imutbale 
+
+
+
+"abc ab bcc ab "  how we find out longest substring in java 
+
+"A1B2C3E5H15" we need to replace number *
+
+
+StringBuffer s= new String buffer("hello");
+StringBuffer s1= new String buffer("hello");
+
+
+s1== s
+s.equal(s1) 
+
+s.toString.equls(s1.toString()) 
+
+
+what is CQRS pattern in microservice instant of why we are not caching
+what is deferent between Rest Template and webClient  
+
+++*************************************************************************************
+
+String s1 = new String ("Hello World");
+String s2 = new String ("Hello World");
+String s3 = "Hello World";
+String s4 = "Hello World";
+ 
+
+
+s1 // 2 object 
+s2 // 1 object 
+
+String s1 = "Java";  
+s1.concat("Programming");
+System.out.println(s1);
+
+
+
+
+
+Class Singleton {
+
+private static SingleTon singleton = null;
+
+private SingleTon(){
+}
+
+public static SingleTon getInstanceSingleTon (){
+
+ if(singleton == null){
+
+ singleton = new SingleTone();
+} 
+
+return  singleton;
+}
+
+}
+
+
+
+
+
+
+
+
+List<String> listOfStrings = Arrays.asList("Java", "Python", "C#", "HTML", "Kotlin", "C++", "COBOL", "C");
+
+
+
+
+listOfStrings.stream().sort(Compater.comparing(String::length).naturalOrder()).forEach(system.out:pr)
+
+******************************************
+
+
+java, spring, springmvc,springboot, microservice , mysql , hibernate , MySQL , kafka , jpa
+
+empId 30058476
+
+1ATENB
+1BT2ZV
+1CT9OX
+
+
+Funcation :- Function can take one input value and
+
+BiFunction :- BiFuncation Can take 2 input value
+
+
+
+Consumer :- its take also one input value and  its return noting
+
+BiConsumer :- its take 2 input value
+
+
+
+Suplier :- won't accept any input that's we don't have bi Suplier
+
+
+Predicate and Bi Predicate Function
+
+Predicate
+
+boolean test( t);
+
+Bi Predicate
+
+boolean test(t,u)
+
+LIN-5CG5162MJG
+********************************8888
+
+fibonic series
+ 
+1, 1,2+1 =3 
+
+1,1,2,3,5 ..
+
+int number = 1; 
+int temp=0;
+for(int i=0;i<=10;i++){
+  sout(number);
+   int sum  = number+temp;
+ temp= number;
+number = sum ;
+
+
+
+
+// 0+0 =1
+// 2 =3
+}
+
+
+int count = 0;
+
+ Runable run1 = ()-> {
+forEach(System.out::println(count++))
+Sout("Thread1")};
+
+ Runable run2 = ()-> {
+forEach(System.out::println(count++))
+Sout("Thread2")};
+
+
+Thread t1 = new Thread(run1)
+Thread t2 = new Thread(run2)
+
+t1.start();
+t2.start();
+********************************************************88
+ InterFace DemoFun {
+
+void display();
+}
+
+
+Class Main {
+
+p s void main(){
+Demofun demo = ()->sout("Hello Word ");
+demo.display();
+
+}
+
+}
+
+
+String str= "abcabc";
+
+Map<Charctar, Long> mapValue=  str.chars()
+                                  .mapToObj(value->(char)c)
+                                  .collect(Collectors.groupingBy(Collectors.identify(), Collectors.counting()));
+
+
+
+
+char[] StrArray= str.toCharAt();
+Map<>
+
+  For(Chartar c::strArray){
+ if(map.getkey().)
+     map.put(str,counter);
+} 
+
+
+
+Employee emp= emplist.stream().sort(comparing(Employee::getSalary).reversOrder()).skip(1).findFirst();
+
+
+
+*&**************************************8
+
+listCust.stream().sort((e1,e2)-> e1.getName()>e2.getName()).toList();
+
+
+
+
+
+
+class Customer implemnts Comperator {
+
+
+
+@verride
+public int  compare( Customer c1 , Customer c2){
+ return c1.getName()>c2.getName()?-1:c1.getName()<c2.getName()?1:0;
+}
+}
+
+retrive data 2 table 
+
+select emp.name emp.address , emp.salary, dept.name from employee as emp 
+  left join  department as dept on dept.id == emp.deptId;
+
+**************************8
+Given any string, insert a space after the first three characters using the Streams API
+ 
+Given any integer list, fetch the third highest value from the list using Streams API
+ 
+Given a list of Car brands, get the count of every car brand in the format of a map
+
+
+
+Map<String , Long> Listcars = cars.stream()
+                                   .collect(Collection.groupingBy(Car::getBrand), Collection.countiong()));
+
+    Interger number =    numbers.Stream().sort(Comparator::reversorder()).skip(2).get();
+
+String str = "RamKrishna";
+
+str.toCharArray().Stream().collect(Collectors.join)
+**********************************************************************888
